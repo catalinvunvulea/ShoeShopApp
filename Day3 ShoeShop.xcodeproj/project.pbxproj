@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C22384E2472A3F5003F2450 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22384D2472A3F5003F2450 /* ProductCell.swift */; };
+		9C2238502472A40A003F2450 /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22384F2472A40A003F2450 /* SizeCell.swift */; };
+		9C23570B24756B3900ED399A /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23570A24756B3900ED399A /* CartCell.swift */; };
+		9C3CE3DA247285F20069DA5F /* ProductPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */; };
+		9C498960247564A000D738EF /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49895F247564A000D738EF /* CartVC.swift */; };
 		9CB579B2245EF3C300C71916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579B1245EF3C300C71916 /* AppDelegate.swift */; };
 		9CB579B4245EF3C300C71916 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579B3245EF3C300C71916 /* SceneDelegate.swift */; };
-		9CB579B6245EF3C300C71916 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579B5245EF3C300C71916 /* ViewController.swift */; };
+		9CB579B6245EF3C300C71916 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579B5245EF3C300C71916 /* MainVC.swift */; };
 		9CB579B9245EF3C300C71916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB579B7245EF3C300C71916 /* Main.storyboard */; };
 		9CB579BB245EF3C400C71916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB579BA245EF3C400C71916 /* Assets.xcassets */; };
 		9CB579BE245EF3C400C71916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB579BC245EF3C400C71916 /* LaunchScreen.storyboard */; };
+		9CB579CA245EFCFF00C71916 /* HomeProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579C9245EFCFF00C71916 /* HomeProductCell.swift */; };
+		9CB579CC245EFE7500C71916 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579CB245EFE7500C71916 /* Product.swift */; };
+		9CB579CE245F036300C71916 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579CD245F036300C71916 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C22384D2472A3F5003F2450 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		9C22384F2472A40A003F2450 /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
+		9C23570A24756B3900ED399A /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageVC.swift; sourceTree = "<group>"; };
+		9C49895F247564A000D738EF /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9CB579AE245EF3C300C71916 /* Day3 ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day3 ShoeShop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB579B1245EF3C300C71916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB579B3245EF3C300C71916 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9CB579B5245EF3C300C71916 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9CB579B5245EF3C300C71916 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		9CB579B8245EF3C300C71916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB579BA245EF3C400C71916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CB579BD245EF3C400C71916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CB579BF245EF3C400C71916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CB579C9245EFCFF00C71916 /* HomeProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCell.swift; sourceTree = "<group>"; };
+		9CB579CB245EFE7500C71916 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		9CB579CD245F036300C71916 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,55 @@
 		9CB579B0245EF3C300C71916 /* Day3 ShoeShop */ = {
 			isa = PBXGroup;
 			children = (
+				9CB579C8245EF3FF00C71916 /* DataService */,
+				9CB579C7245EF3EC00C71916 /* Controller */,
+				9CB579C6245EF3E100C71916 /* View */,
+				9CB579C5245EF3CD00C71916 /* Model */,
 				9CB579B1245EF3C300C71916 /* AppDelegate.swift */,
 				9CB579B3245EF3C300C71916 /* SceneDelegate.swift */,
-				9CB579B5245EF3C300C71916 /* ViewController.swift */,
 				9CB579B7245EF3C300C71916 /* Main.storyboard */,
 				9CB579BA245EF3C400C71916 /* Assets.xcassets */,
 				9CB579BC245EF3C400C71916 /* LaunchScreen.storyboard */,
 				9CB579BF245EF3C400C71916 /* Info.plist */,
 			);
 			path = "Day3 ShoeShop";
+			sourceTree = "<group>";
+		};
+		9CB579C5245EF3CD00C71916 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CB579CB245EFE7500C71916 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CB579C6245EF3E100C71916 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CB579C9245EFCFF00C71916 /* HomeProductCell.swift */,
+				9C22384D2472A3F5003F2450 /* ProductCell.swift */,
+				9C22384F2472A40A003F2450 /* SizeCell.swift */,
+				9C23570A24756B3900ED399A /* CartCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CB579C7245EF3EC00C71916 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CB579B5245EF3C300C71916 /* MainVC.swift */,
+				9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */,
+				9C49895F247564A000D738EF /* CartVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CB579C8245EF3FF00C71916 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				9CB579CD245F036300C71916 /* DataService.swift */,
+			);
+			path = DataService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CB579B6245EF3C300C71916 /* ViewController.swift in Sources */,
+				9CB579B6245EF3C300C71916 /* MainVC.swift in Sources */,
+				9CB579CA245EFCFF00C71916 /* HomeProductCell.swift in Sources */,
+				9CB579CC245EFE7500C71916 /* Product.swift in Sources */,
+				9C3CE3DA247285F20069DA5F /* ProductPageVC.swift in Sources */,
+				9C23570B24756B3900ED399A /* CartCell.swift in Sources */,
+				9CB579CE245F036300C71916 /* DataService.swift in Sources */,
+				9C22384E2472A3F5003F2450 /* ProductCell.swift in Sources */,
 				9CB579B2245EF3C300C71916 /* AppDelegate.swift in Sources */,
+				9C2238502472A40A003F2450 /* SizeCell.swift in Sources */,
+				9C498960247564A000D738EF /* CartVC.swift in Sources */,
 				9CB579B4245EF3C300C71916 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

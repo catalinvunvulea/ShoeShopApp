@@ -1,0 +1,82 @@
+//
+//  ViewController.swift
+//  Day3 ShoeShop
+//
+//  Created by Dumitru Catalin Vunvulea on 03/05/2020.
+//  Copyright © 2020 Dumitru Catalin Vunvulea. All rights reserved.
+//
+
+import UIKit
+
+class MainVC: UIViewController {
+    
+    @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var settingsBtn: UIButton!
+    @IBOutlet weak var basketBtn: UIButton!
+    @IBOutlet weak var sortByBtn: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    var products: [Product] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        basketBtn.layer.cornerRadius = basketBtn.frame.height / 2
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        products = DataService.instance.products
+        basketBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cartbtnPressed(_ sender: Any) {
+        guard let cartVC = storyboard?.instantiateViewController(identifier: "CartVC") as? CartVC else { return }
+        cartVC.modalPresentationStyle = .fullScreen
+        present(cartVC, animated: true, completion: nil)
+    }
+    
+    
+}
+
+
+
+extension MainVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeProductCell") as? HomeProductCell {
+            let product = products[indexPath.row]
+            cell.updateProducts(product: product)
+            cell.productById = products[indexPath.row].liked
+            cell.contentView.layer.cornerRadius = 20
+            cell.selectionStyle = .none
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+   
+    
+}
+
+extension MainVC: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let productPage = storyboard?.instantiateViewController(identifier: "ProductPageVC") as? ProductPageVC else { return }
+        productPage.product = self.products[indexPath.row]
+        productPage.modalPresentationStyle = .fullScreen
+        self.present(productPage, animated: true, completion: nil)
+        
+        
+    }
+    
+}
