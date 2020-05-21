@@ -10,6 +10,7 @@
 		9C22384E2472A3F5003F2450 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22384D2472A3F5003F2450 /* ProductCell.swift */; };
 		9C2238502472A40A003F2450 /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C22384F2472A40A003F2450 /* SizeCell.swift */; };
 		9C23570B24756B3900ED399A /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C23570A24756B3900ED399A /* CartCell.swift */; };
+		9C3BC05D2476C3FF00F3CE95 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BC05C2476C3FF00F3CE95 /* MenuVC.swift */; };
 		9C3CE3DA247285F20069DA5F /* ProductPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */; };
 		9C498960247564A000D738EF /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49895F247564A000D738EF /* CartVC.swift */; };
 		9CB579B2245EF3C300C71916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579B1245EF3C300C71916 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		9C22384D2472A3F5003F2450 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		9C22384F2472A40A003F2450 /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
 		9C23570A24756B3900ED399A /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		9C3BC05C2476C3FF00F3CE95 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageVC.swift; sourceTree = "<group>"; };
 		9C49895F247564A000D738EF /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9CB579AE245EF3C300C71916 /* Day3 ShoeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day3 ShoeShop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				9CB579B5245EF3C300C71916 /* MainVC.swift */,
 				9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */,
 				9C49895F247564A000D738EF /* CartVC.swift */,
+				9C3BC05C2476C3FF00F3CE95 /* MenuVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				9CB579CC245EFE7500C71916 /* Product.swift in Sources */,
 				9C3CE3DA247285F20069DA5F /* ProductPageVC.swift in Sources */,
 				9C23570B24756B3900ED399A /* CartCell.swift in Sources */,
+				9C3BC05D2476C3FF00F3CE95 /* MenuVC.swift in Sources */,
 				9CB579CE245F036300C71916 /* DataService.swift in Sources */,
 				9C22384E2472A3F5003F2450 /* ProductCell.swift in Sources */,
 				9CB579B2245EF3C300C71916 /* AppDelegate.swift in Sources */,

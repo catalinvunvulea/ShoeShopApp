@@ -10,9 +10,9 @@ import UIKit
 
 class CartVC: UIViewController {
     
-    @IBOutlet weak var settingsBtn: UIButton!
+    @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var numberOfItemsInCartBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
@@ -29,6 +29,9 @@ class CartVC: UIViewController {
         tableView.delegate = self
         checkOutBtn.layer.cornerRadius = checkOutBtn.frame.height / 2
         totalLbl.layer.cornerRadius = totalLbl.frame.height / 2
+        updateTotalCartValue()
+        
+        
         
     }
     
@@ -36,9 +39,28 @@ class CartVC: UIViewController {
         super.viewWillAppear(animated)
         numberOfItemsInCartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
         
+        
+    }
+    
+    
+    @IBAction func menuBtnPressed(_ sender: Any) {
+        guard let menuVC = storyboard?.instantiateViewController(identifier: "MenuVC") as? MenuVC else { return }
+        menuVC.modalPresentationStyle = .fullScreen
+        present(menuVC, animated: true, completion: nil)
     }
     
     @IBAction func checkOutBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func filterBtnPressed(_ sender: Any) {
+    }
+    
+    func updateTotalCartValue() {
+        var value: Double = 0
+        for price in DataService.instance.cart {
+            value += price.price
+        }
+        totalValueLbl.text = "£ " + String(format: "%.2f", value)  //round double to show 2 digits
     }
     
 }

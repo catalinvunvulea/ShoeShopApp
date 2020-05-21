@@ -12,7 +12,7 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var settingsBtn: UIButton!
+    @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var basketBtn: UIButton!
     @IBOutlet weak var sortByBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
@@ -40,6 +40,17 @@ class MainVC: UIViewController {
         guard let cartVC = storyboard?.instantiateViewController(identifier: "CartVC") as? CartVC else { return }
         cartVC.modalPresentationStyle = .fullScreen
         present(cartVC, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func filterBtnPressed(_ sender: Any) {
+    }
+    
+    
+    @IBAction func menuBtnPressed(_ sender: Any) {
+        guard let menuVC = storyboard?.instantiateViewController(identifier: "MenuVC") as? MenuVC else { return }
+        menuVC.modalPresentationStyle = .fullScreen
+        present(menuVC, animated: true, completion: nil)
     }
     
     

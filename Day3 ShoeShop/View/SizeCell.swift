@@ -11,23 +11,25 @@ import UIKit
 class SizeCell: UICollectionViewCell {
     
     @IBOutlet weak var sizeLbl: UILabel!
+    @IBOutlet weak var sizeCellView: UIView!
+    
     
     
     func updateSize(size: String, stock: Int, selectedCell: String, indexCell: String) {
         self.sizeLbl.text = size
-        contentView.layer.cornerRadius = 10
+        sizeCellView.layer.cornerRadius = 10
         if stock == 0 {
-            contentView.alpha = 0.5
-            contentView.backgroundColor = .lightGray
+            sizeCellView.alpha = 0.5
+            sizeCellView.backgroundColor = .lightGray
             self.sizeLbl.textColor = .black
         } else if selectedCell == indexCell {
-            contentView.backgroundColor = .black
+            sizeCellView.backgroundColor = .black
             self.sizeLbl.textColor = .white
-            contentView.alpha = 1
+            sizeCellView.alpha = 1
         } else {
-            contentView.backgroundColor = .lightGray
+            sizeCellView.backgroundColor = .lightGray
             self.sizeLbl.textColor = .black
-            contentView.alpha = 1
+            sizeCellView.alpha = 1
         }
         
     }

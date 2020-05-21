@@ -29,7 +29,7 @@ class CartCell: UITableViewCell {
     }
     
     func updateCartCell(product: Product) {
-        self.imageViewHolder.layer.cornerRadius = 20
+        self.imageViewHolder.layer.cornerRadius = 25
         self.productImage.image = UIImage(named: product.imageName)
         self.productNameLbl.text = product.productName
         self.productPriceLbl.text = "£\(product.price)"

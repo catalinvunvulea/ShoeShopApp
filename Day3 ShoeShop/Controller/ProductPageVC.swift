@@ -36,6 +36,9 @@ class ProductPageVC: UIViewController {
     var productSizes: [Int: [String: Int]] = [:]
     var selectedSizeCell = ""
     
+   
+    var stockArray: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +47,7 @@ class ProductPageVC: UIViewController {
         
         sizeCollectionView.delegate = self
         sizeCollectionView.dataSource = self
+        
         
         upperSideView.layer.cornerRadius = 20
         likebtnView.layer.borderWidth = 0.9
@@ -60,6 +64,15 @@ class ProductPageVC: UIViewController {
         }
         productImages = product.additionalImages
         productSizes = product.stockSize
+        for (_, value) in productSizes {
+            for (_, value) in value {
+                stockArray.append(value)
+            }
+        }
+        addToCartBtn.isEnabled = false
+        
+        productNameLbl.adjustsFontSizeToFitWidth = true
+        productPriceLbl.adjustsFontSizeToFitWidth = true
         
         
     }
@@ -99,6 +112,19 @@ extension ProductPageVC: UICollectionViewDelegate {
             guard sizeCollectionView.dequeueReusableCell(withReuseIdentifier: "SizeCell", for: indexPath) is SizeCell else { return }
             selectedSizeCell = "\(indexPath.row)"
             sizeCollectionView.reloadData()
+            var stock = 0
+            let product = productSizes[indexPath.row]!
+            for (_, value) in product {
+                stock = value
+            }
+            if stock > 0 {
+                self.addToCartBtn.alpha = 1
+                self.addToCartBtn.isEnabled = true
+            } else {
+                self.addToCartBtn.alpha = 0.5
+                self.addToCartBtn.isEnabled = false
+            }
+            
             
         } else {
             productCollectionView.reloadData()
@@ -155,8 +181,7 @@ extension ProductPageVC: UICollectionViewDelegateFlowLayout {
             let height = self.productCollectionView.frame.height
             return CGSize(width: width, height: height)
         } else {
-            let height = self.sizeCollectionView.frame.height * 0.95
-            return CGSize(width: 70, height: height)
+            return CGSize(width: 70, height: 70)
             
         }
     }
