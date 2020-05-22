@@ -13,6 +13,8 @@ class ProductPageVC: UIViewController {
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var cartBtn: UIButton!
+    
     
     @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var productNameLbl: UILabel!
@@ -48,7 +50,8 @@ class ProductPageVC: UIViewController {
         sizeCollectionView.delegate = self
         sizeCollectionView.dataSource = self
         
-        
+        cartBtn.layer.cornerRadius = cartBtn.frame.height / 2
+        cartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
         upperSideView.layer.cornerRadius = 20
         likebtnView.layer.borderWidth = 0.9
         likebtnView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -73,15 +76,20 @@ class ProductPageVC: UIViewController {
         
         productNameLbl.adjustsFontSizeToFitWidth = true
         productPriceLbl.adjustsFontSizeToFitWidth = true
-        
-        
     }
     
+   
     @IBAction func sizeGuideBtnPressed(_ sender: Any) {
         print("size guide btn pressed")
     }
     @IBAction func moreBtnPressed(_ sender: Any) {
         print("more btn pressed")
+    }
+    
+    @IBAction func cartBtnPressed(_ sender: Any) {
+        guard let cartVC = storyboard?.instantiateViewController(identifier: "CartVC") as? CartVC else {return}
+        cartVC.modalPresentationStyle = .fullScreen
+        present(cartVC, animated: true, completion: nil)
     }
     
     
@@ -102,6 +110,22 @@ class ProductPageVC: UIViewController {
     
     @IBAction func addToCartBtnPressed(_ sender: Any) {
         DataService.instance.addToCart(product: product)
+         cartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
+        UIView.animate(withDuration: 0.3,
+        animations: {
+            self.cartBtn.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        },
+        completion: { _ in
+            UIView.animate(withDuration: 0.3) {
+                self.cartBtn.transform = CGAffineTransform.identity
+            }
+        })
+        let alert = UIAlertController(title: "Item added to cart", message: "Would you like to checkout or continue shopping?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Checkout", style: UIAlertAction.Style.default, handler: { (_) in
+            self.cartBtnPressed(self)
+        }))
+        alert.addAction(UIAlertAction(title: "Continue Shopping", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

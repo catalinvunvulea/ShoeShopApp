@@ -13,7 +13,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var filterBtn: UIButton!
-    @IBOutlet weak var basketBtn: UIButton!
+    @IBOutlet weak var cartBtn: UIButton!
     @IBOutlet weak var sortByBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -26,13 +26,13 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
-        basketBtn.layer.cornerRadius = basketBtn.frame.height / 2
+        cartBtn.layer.cornerRadius = cartBtn.frame.height / 2
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         products = DataService.instance.products
-        basketBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
+        cartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
         tableView.reloadData()
     }
     

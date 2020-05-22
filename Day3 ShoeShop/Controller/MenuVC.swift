@@ -22,18 +22,28 @@ class MenuVC: UIViewController {
     @IBOutlet weak var saleLbl: UILabel!
     @IBOutlet weak var profileLbl: UILabel!
     
-    
     @IBOutlet weak var sezonalCollectionBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sezonalCollectionBtn.layer.cornerRadius = 15
-        cartBtn.layer.contents = cartBtn.frame.height / 2
+        cartBtn.layer.cornerRadius = cartBtn.frame.height / 2
         cartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
+        setupLabel()
         
+    }
+    
+    func setupLabel() {
+        let tapHomeLbl = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_sender:)))
+        self.homeLbl.isUserInteractionEnabled = true
+        self.homeLbl.addGestureRecognizer(tapHomeLbl)
         
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func handleTap(_sender: UITapGestureRecognizer) {
+        guard let presentedVc = storyboard?.instantiateViewController(identifier: "MainVC") as? MainVC else {return}
+        presentedVc.modalPresentationStyle = .fullScreen
+        present(presentedVc, animated: true, completion: nil)
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

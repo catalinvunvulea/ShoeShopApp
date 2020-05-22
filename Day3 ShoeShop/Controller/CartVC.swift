@@ -10,14 +10,15 @@ import UIKit
 
 class CartVC: UIViewController {
     
-    @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var filterBtn: UIButton!
-    @IBOutlet weak var numberOfItemsInCartBtn: UIButton!
+    @IBOutlet weak var cartBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var totalValueLbl: UILabel!
     @IBOutlet weak var checkOutBtn: UIButton!
+    @IBOutlet weak var emtyBagLbl: UILabel!
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +30,11 @@ class CartVC: UIViewController {
         tableView.delegate = self
         checkOutBtn.layer.cornerRadius = checkOutBtn.frame.height / 2
         totalLbl.layer.cornerRadius = totalLbl.frame.height / 2
+        if DataService.instance.cart.count > 0 {
+            emtyBagLbl.isHidden = true
+        } else {
+            emtyBagLbl.isHidden = false
+        }
         updateTotalCartValue()
         
         
@@ -37,19 +43,20 @@ class CartVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        numberOfItemsInCartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
+        cartBtn.layer.cornerRadius = cartBtn.frame.height / 2
+        cartBtn.setTitle("\(DataService.instance.cart.count)", for: .normal)
         
         
     }
     
     
-    @IBAction func menuBtnPressed(_ sender: Any) {
-        guard let menuVC = storyboard?.instantiateViewController(identifier: "MenuVC") as? MenuVC else { return }
-        menuVC.modalPresentationStyle = .fullScreen
-        present(menuVC, animated: true, completion: nil)
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func checkOutBtnPressed(_ sender: Any) {
+        DataService.instance.checkout()
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func filterBtnPressed(_ sender: Any) {
