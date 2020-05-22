@@ -60,6 +60,8 @@ class CartVC: UIViewController {
     }
     
     @IBAction func filterBtnPressed(_ sender: Any) {
+       guard let filterVC =  storyboard?.instantiateViewController(identifier: "FiltersVC") as? FiltersVC else {return}
+        present(filterVC, animated: true, completion: nil)
     }
     
     func updateTotalCartValue() {

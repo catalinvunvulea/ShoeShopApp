@@ -22,6 +22,7 @@
 		9CB579CA245EFCFF00C71916 /* HomeProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579C9245EFCFF00C71916 /* HomeProductCell.swift */; };
 		9CB579CC245EFE7500C71916 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579CB245EFE7500C71916 /* Product.swift */; };
 		9CB579CE245F036300C71916 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB579CD245F036300C71916 /* DataService.swift */; };
+		9CCF751A247829BF00DDF4C6 /* FiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF7519247829BF00DDF4C6 /* FiltersVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9CB579C9245EFCFF00C71916 /* HomeProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCell.swift; sourceTree = "<group>"; };
 		9CB579CB245EFE7500C71916 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9CB579CD245F036300C71916 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9CCF7519247829BF00DDF4C6 /* FiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				9C3CE3D9247285F20069DA5F /* ProductPageVC.swift */,
 				9C49895F247564A000D738EF /* CartVC.swift */,
 				9C3BC05C2476C3FF00F3CE95 /* MenuVC.swift */,
+				9CCF7519247829BF00DDF4C6 /* FiltersVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				9C23570B24756B3900ED399A /* CartCell.swift in Sources */,
 				9C3BC05D2476C3FF00F3CE95 /* MenuVC.swift in Sources */,
 				9CB579CE245F036300C71916 /* DataService.swift in Sources */,
+				9CCF751A247829BF00DDF4C6 /* FiltersVC.swift in Sources */,
 				9C22384E2472A3F5003F2450 /* ProductCell.swift in Sources */,
 				9CB579B2245EF3C300C71916 /* AppDelegate.swift in Sources */,
 				9C2238502472A40A003F2450 /* SizeCell.swift in Sources */,
