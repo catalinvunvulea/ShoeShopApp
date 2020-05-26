@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class Product {
-    
+    var brand: String
+    var color: UIColor
     var imageName: String
     var productName: String
     var price: Double
@@ -18,7 +20,9 @@ class Product {
     var liked: Bool
     var id: String
     
-    init(imageName: String, productName: String, price: Double, stockSize: [Int: [String:Int]], additionalImages: [String], liked: Bool, id: String) {
+    init(brand: String, color: UIColor, imageName: String, productName: String, price: Double, stockSize: [Int: [String:Int]], additionalImages: [String], liked: Bool, id: String) {
+        self.brand = brand
+        self.color = color
         self.imageName = imageName
         self.productName = productName
         self.price = price

@@ -33,12 +33,16 @@ class FiltersVC: UIViewController {
     @IBOutlet weak var colorCollectionView: UICollectionView!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         brandCollectionView.dataSource = self
         brandCollectionView.delegate = self
         colorCollectionView.dataSource = self
         colorCollectionView.delegate = self
+    
+        
+        colorCollectionView.tag = 1
         
         colorCollectionView.tag = 1
         minPriceView.layer.cornerRadius = minPriceView.frame.height / 2
@@ -46,20 +50,57 @@ class FiltersVC: UIViewController {
        
     }
     
+    
 }
 
 extension FiltersVC: UICollectionViewDelegate {
     
 }
 
+extension FiltersVC: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
+    }
+    
+}
+
 extension FiltersVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if collectionView.tag == 0 {
+            return DataService.instance.brands.count
+        } else {
+            return DataService.instance.colors.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //to add the cells
-        return UICollectionViewCell()
+        if collectionView.tag == 0{
+            guard let brandCell = brandCollectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as? BrandCell else { return UICollectionViewCell() }
+            brandCell.updateBrands(brandImg: DataService.instance.brands[indexPath.item])
+            if brandCell.isSelected {
+                brandCell.brandImage.layer.borderWidth = 2
+                brandCell.brandImage.layer.borderColor = UIColor.black.cgColor
+            } else {
+                brandCell.brandImage.layer.borderWidth = 0
+            }
+            return brandCell
+            
+        } else {
+            guard let colorCell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as? ColorCell else { return UICollectionViewCell() }
+            colorCell.updateColorCell(color: DataService.instance.colors[indexPath.item])
+            return colorCell
+            
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 0 {
+            let brandCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
+          
+        } else {
+            
+        }
     }
     
     
